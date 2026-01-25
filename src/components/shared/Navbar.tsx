@@ -65,7 +65,7 @@ const Navbar = ({
     title: "Shadcnblocks.com",
   },
   menu = [
-    { title: "Home", url: "#" },
+    { title: "Home", url: "/" },
     {
       title: "Products",
       url: "#",
@@ -128,12 +128,20 @@ const Navbar = ({
       ],
     },
     {
-      title: "Pricing",
-      url: "#",
+      title: "About",
+      url: "about",
     },
     {
-      title: "Blog",
-      url: "#",
+      title: "Blogs",
+      url: "blogs",
+    },
+    {
+      title: "Contact",
+      url: "contact",
+    },
+    {
+      title: "Dashboard",
+      url: "dashboard",
     },
   ],
   auth = {
@@ -144,11 +152,11 @@ const Navbar = ({
 }: Navbar1Props) => {
   return (
     <section className={cn("py-4 shadow ", className)}>
-      <div className="container">
-        {/* Desktop Menu */}
+      <div className="container mx-auto md:px-0 px-4">
+        {/*-------------Desktop-------Menu------------------*/}
         <nav className="hidden items-center justify-between lg:flex">
           <div className="flex items-center gap-6">
-            {/* Logo */}
+            {/*---------------Logo-----------*/}
             <a href={logo.url} className="flex items-center gap-2">
               <img
                 src={logo.src}
@@ -169,18 +177,20 @@ const Navbar = ({
           </div>
           <div className="flex gap-2">
             <Button asChild variant="outline" size="sm">
-              <a href={auth.login.url}>{auth.login.title}</a>
+              <a href="login">Login</a>
             </Button>
             <Button asChild size="sm">
-              <a href={auth.signup.url}>{auth.signup.title}</a>
+              <a href="singup">Sing Up</a>
             </Button>
           </div>
         </nav>
 
-        {/* Mobile Menu */}
+
+
+        {/*--------------Mobile-----------Menu---------------*/}
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            {/*---------------Logo-----------*/}
             <a href={logo.url} className="flex items-center gap-2">
               <img
                 src={logo.src}
@@ -217,10 +227,10 @@ const Navbar = ({
 
                   <div className="flex flex-col gap-3">
                     <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.title}</a>
+                     <a href="login">Login</a>
                     </Button>
                     <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.title}</a>
+                      <a href="singup">Sing Up</a>
                     </Button>
                   </div>
                 </div>
