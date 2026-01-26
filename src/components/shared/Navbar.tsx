@@ -26,6 +26,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Link from "next/link";
 
 interface MenuItem {
   title: string;
@@ -170,6 +171,7 @@ const Navbar = ({
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList>
+                   {/*---------Dropdown-------Intregation-------Desktop-------*/}
                   {menu.map((item) => renderMenuItem(item))}
                 </NavigationMenuList>
               </NavigationMenu>
@@ -184,7 +186,6 @@ const Navbar = ({
             </Button>
           </div>
         </nav>
-
 
 
         {/*--------------Mobile-----------Menu---------------*/}
@@ -222,12 +223,13 @@ const Navbar = ({
                     collapsible
                     className="flex w-full flex-col gap-4"
                   >
+                    {/*---------Dropdown-------Intregation-------Mobial---------*/}
                     {menu.map((item) => renderMobileMenuItem(item))}
                   </Accordion>
 
                   <div className="flex flex-col gap-3">
                     <Button asChild variant="outline">
-                     <a href="login">Login</a>
+                      <a href="login">Login</a>
                     </Button>
                     <Button asChild>
                       <a href="singup">Sing Up</a>
@@ -243,7 +245,10 @@ const Navbar = ({
   );
 };
 
+
+
 const renderMenuItem = (item: MenuItem) => {
+   {/*---------Dropdown-------Intregation-------For-----Desktop---------*/}
   if (item.items) {
     return (
       <NavigationMenuItem key={item.title}>
@@ -259,18 +264,20 @@ const renderMenuItem = (item: MenuItem) => {
     );
   }
 
+  //------------Customis--------Navlink---------For---Desktop--------
   return (
     <NavigationMenuItem key={item.title}>
       <NavigationMenuLink
-        href={item.url}
+        asChild
         className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
       >
-        {item.title}
+        <Link href={item.url}>{item.title}</Link>
       </NavigationMenuLink>
     </NavigationMenuItem>
   );
 };
 
+{/*---------Dropdown-------Intregation-------For-----Mobial---------*/}
 const renderMobileMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
@@ -288,9 +295,10 @@ const renderMobileMenuItem = (item: MenuItem) => {
   }
 
   return (
-    <a key={item.title} href={item.url} className="text-md font-semibold">
+    //------------Customis--------Navlink---------For---Mobial--------
+    <Link key={item.title} href={item.url} className="text-md font-semibold">
       {item.title}
-    </a>
+    </Link>
   );
 };
 
@@ -313,4 +321,4 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
   );
 };
 
-export { Navbar }
+export { Navbar };
