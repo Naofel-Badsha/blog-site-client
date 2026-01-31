@@ -2,7 +2,7 @@ import React from 'react'
 
 const MarketingPage = () => {
   return (
-    <div>MarketingPage</div>
+    <div className='border-2 border-red-700 '>MarketingPage</div>
   )
 }
 

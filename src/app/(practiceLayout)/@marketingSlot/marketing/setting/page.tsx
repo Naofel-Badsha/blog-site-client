@@ -2,7 +2,7 @@ import React from 'react'
 
 const SettingPage = () => {
   return (
-    <div>SettingPage</div>
+    <div className='border-2 border-blue-900 '>SettingPage</div>
   )
 }
 
