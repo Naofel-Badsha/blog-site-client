@@ -142,6 +142,10 @@ const Navbar = ({
       url: "contact",
     },
     {
+      title: "Products",
+      url: "products",
+    },
+    {
       title: "Dashboard",
       url: "user-dashboard",
     },
