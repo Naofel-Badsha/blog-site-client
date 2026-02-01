@@ -1,8 +1,8 @@
 
 
-export interface Routs {
+export interface Route {
     title: string;
-    items: {
+    items:{
         title: string;
         url: string;
     }[]

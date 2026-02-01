@@ -1,1 +1,1 @@
-export type {Route} from"./routs.type"
+export type {Route} from "./routes.type"
